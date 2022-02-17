@@ -138,3 +138,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = (os.path.join(
     BASE_DIR, 'frontend/fullstack-messaging-app/build/static'),)
 REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/fullstack-messaging-app')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
