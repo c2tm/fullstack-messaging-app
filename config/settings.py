@@ -42,12 +42,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
 
     # 3rdparty
     'rest_framework',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+    'allauth.socialaccount',
 
     # local
+    'api.apps.ApiConfig',
     'channels.apps.ChannelsConfig',
     'frontend.apps.FrontendConfig',
 ]
@@ -147,3 +155,10 @@ REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/fullstack-messaging-app')
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+SITE_ID = 1
+
+# Email backend
+# https://docs.djangoproject.com/en/3.0/ref/settings/#email-backend
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

@@ -1,0 +1,25 @@
+.login-view-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-view-container > div > form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+  width: 30rem;
+  color: black;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(230, 230, 230, 1) 50%,
+    rgba(212, 212, 212, 1) 100%
+  );
+  box-shadow: 3px 1px 5px 5px rgba(0, 0, 0, 0.1);
+  margin: 0 0 10rem 0;
+}

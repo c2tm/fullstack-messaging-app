@@ -1,0 +1,32 @@
+/* ///////////////////////////SIDEBAR */
+
+.sidebar-container {
+  width: 20rem;
+  height: 100vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(230, 230, 230, 1) 50%,
+    rgba(212, 212, 212, 1) 100%
+  );
+  border-right: 3px solid rgb(95, 218, 95);
+  justify-self: flex-start;
+  padding: 0.5rem 0 0 0;
+}
+
+.list-of-channels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+
+.list-item {
+  color: black;
+  list-style: none;
+}
+
+.message {
+  color: white;
+}
