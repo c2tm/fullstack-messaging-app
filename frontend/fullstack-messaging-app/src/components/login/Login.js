@@ -81,7 +81,7 @@ function Login(props) {
                 body: JSON.stringify(registerInfo),
             }
     
-            const response = await fetch(`rest-auth/registraion/`, options).catch(handleErrors)
+            const response = await fetch(`/rest-auth/registraion/`, options).catch(handleErrors)
     
             if(!response.ok) {
             throw new Error('Response was not ok!')

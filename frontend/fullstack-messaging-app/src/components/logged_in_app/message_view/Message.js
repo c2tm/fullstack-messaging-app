@@ -1,11 +1,16 @@
 import { useState } from 'react'
 import Cookies from 'js-cookie'
 
-function Message({id, content, channelView, deleteMessageLocal, index, loadMessages}) {
+function Message({id, content, channelView, deleteMessageLocal, index, loadMessages, username}) {
 
     const [editForm, setEditForm] = useState(false);
     const [editInput, setEditInput] = useState(content);
     const [previewContent, setPreviewContent] = useState(content);
+
+
+    if(previewContent !== content) {
+        setPreviewContent(content);
+    }
 
     const handleErrors = (err) => {
         console.warn(err);
@@ -30,8 +35,7 @@ function Message({id, content, channelView, deleteMessageLocal, index, loadMessa
             if(!response.ok) {
             throw new Error('Response was not ok!')
             } else {
-                // deleteMessageLocal(index)
-                loadMessages()
+                deleteMessageLocal(id)
             }
         }
         deleteMessage()
@@ -67,6 +71,7 @@ function Message({id, content, channelView, deleteMessageLocal, index, loadMessa
 
     const previewHTML = (
         <div className='message-container'>
+            <h1 className='message-name'>{username}</h1>
             <div className='message' key={id}>{previewContent}</div>
             <div className='message-button-container'>
                 <button type='button' onClick={handleEditButton}>Edit</button>

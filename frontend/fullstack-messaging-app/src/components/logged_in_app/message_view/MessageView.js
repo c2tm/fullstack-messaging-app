@@ -30,14 +30,18 @@ function MessageView(props) {
             }
     }
 
-    const deleteMessageLocal = (index) => {
-        let newMessageList = messages;
+    const deleteMessageLocal = (id) => {
+        let newMessageList = [...messages]; 
+        const targetMessage = newMessageList.find(message => message.id = id)
+        const index = newMessageList.indexOf(targetMessage)
         newMessageList.splice(index, 1);
         setMessages(newMessageList);
     }
 
+    console.log(messages)
+
     const messageListHTML = messages.map((message, index) => (
-         <Message id={message.id} content={message.content} channelView={channelView} index={index} deleteMessageLocal={deleteMessageLocal} loadMessages={loadMessages}/>
+         <Message id={message.id} username={message.username} content={message.content} channelView={channelView} index={index} deleteMessageLocal={deleteMessageLocal} loadMessages={loadMessages}/>
     ))
 
     return (

@@ -35,3 +35,7 @@
   display: flex;
   flex-direction: column;
 }
+
+.message-name {
+  font-size: 14px;
+}
